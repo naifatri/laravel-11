@@ -72,9 +72,6 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h2>Naifa Tri Candra<br></h2>
         <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer">Freelancer</span></p>
-        <div class="social-links">
-          <a href="#"><i class="bi bi-instagram"></i></a>
-        </div>
       </div>
 
     </section><!-- /Hero Section -->
@@ -325,7 +322,7 @@
                 <i class="bi bi-geo-alt flex-shrink-0"></i>
                 <div>
                   <h3>Address</h3>
-                  <p>A108 Adam Street, New York, NY 535022</p>
+                  <p>Jln. Bukit Asam Ujung1 ,Laladon indah </p>
                 </div>
               </div>
             </div><!-- End Info Item -->
@@ -335,7 +332,7 @@
                 <i class="bi bi-telephone flex-shrink-0"></i>
                 <div>
                   <h3>Call<br></h3>
-                  <p>+1 5589 55488 55</p>
+                  <p>088213525676</p>
                 </div>
               </div>
             </div><!-- End Info Item -->
@@ -345,7 +342,7 @@
                 <i class="bi bi-envelope flex-shrink-0"></i>
                 <div>
                   <h3>Email</h3>
-                  <p>info@example.com</p>
+                  <p>naifatricandra7@gmail.com</p>
                 </div>
               </div>
             </div><!-- End Info Item -->

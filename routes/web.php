@@ -8,6 +8,7 @@ use App\Http\Controllers\CertificatesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\AdminProjectController;
 use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
 
                         Route::get('/', function () {
@@ -60,6 +61,11 @@ use Illuminate\Support\Facades\Route;
                         });
                         
                         Route::get('/home', [HomeController::class, 'index']);
+
+
+                        
+
+Route::resource('/admin/dashboard/about', AboutController::class);
 
 
         

@@ -6,6 +6,7 @@
     <title>Data Certificate</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="//cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
     <style>
         .btn-light-blue {
             background-color: #00b4d8;
@@ -41,25 +42,41 @@
                     <td>{{ $certificate->name }}</td>
                     <td>{{ $certificate->issued_by }}</td>
                     <td>{{ $certificate->issued_at }}</td>
-                    <td>{{ $certificate->description }}</td> <!-- Kolom deskripsi -->
+                    <td>{{ $certificate->description }}</td>
                     <td>
                         <a href="{{ Storage::url($certificate->file_path) }}" 
                            class="btn btn-light-blue btn-sm" 
                            target="_blank">View Certificate</a>
                     </td>
                     <td>
-                        <a href="{{ route('certificates.edit', $certificate->id) }}" class="btn btn-info btn-sm">Edit</a>
-                        
-                        <form action="{{ route('certificates.destroy', $certificate->id) }}" 
-                              method="POST" 
-                              style="display:inline;" 
-                              class="delete-form">
-                            @csrf
-                            @method('DELETE')
-                            <button type="button" class="btn btn-danger btn-sm delete-btn">Delete</button>
-                        </form>
-
-                        <a href="{{ route('certificates.show', $certificate->id) }}" class="btn btn-primary btn-sm">Detail</a>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                Actions
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{{ route('certificates.edit', $certificate->id) }}" class="dropdown-item">
+                                        <i class="bi bi-pencil-square"></i> Edit
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('certificates.show', $certificate->id) }}" class="dropdown-item">
+                                        <i class="bi bi-eye"></i> Detail
+                                    </a>
+                                </li>
+                                <li>
+                                    <form action="{{ route('certificates.destroy', $certificate->id) }}" 
+                                          method="POST" 
+                                          class="delete-form">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="button" class="dropdown-item delete-btn">
+                                            <i class="bi bi-trash"></i> Delete
+                                        </button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
                     </td>
                 </tr>
                 @endforeach

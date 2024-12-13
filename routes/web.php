@@ -51,14 +51,28 @@ use Illuminate\Support\Facades\Route;
                         });
                        
                         Route::prefix('admin/dashboard')->name('admin.dashboard.')->group(function () {
+                            // Route untuk halaman daftar kontak
                             Route::get('contacts', [ContactsController::class, 'index'])->name('contacts.index');
+                            
+                            // Route untuk form tambah kontak
                             Route::get('contacts/create', [ContactsController::class, 'create'])->name('contacts.create');
+                            
+                            // Route untuk menyimpan kontak
                             Route::post('contacts', [ContactsController::class, 'store'])->name('contacts.store');
-                            Route::get('contacts/{id}', [ContactsController::class, 'show'])->name('contacts.show');
-                            Route::get('contacts/{contacts}/edit', [ContactsController::class, 'edit'])->name('contacts.edit');
-                            Route::put('contacts/{contacts}', [ContactsController::class, 'update'])->name('contacts.update');                            
-                            Route::delete('contacts/{contacts}', [ContactsController::class, 'destroy'])->name('contacts.destroy');
+                            
+                            // Route untuk menampilkan kontak berdasarkan ID
+                            Route::get('contacts/{contact}', [ContactsController::class, 'show'])->name('contacts.show');
+                            
+                            // Route untuk menampilkan form edit kontak
+                            Route::get('contacts/{contact}/edit', [ContactsController::class, 'edit'])->name('contacts.edit');
+                            
+                            // Route untuk memperbarui kontak
+                            Route::put('contacts/{contact}', [ContactsController::class, 'update'])->name('contacts.update');
+                            
+                            // Route untuk menghapus kontak
+                            Route::delete('contacts/{contact}', [ContactsController::class, 'destroy'])->name('contacts.destroy');
                         });
+                        
                         
                         Route::get('/home', [HomeController::class, 'index']);
 

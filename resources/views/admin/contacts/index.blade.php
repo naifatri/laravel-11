@@ -14,7 +14,7 @@
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h2 class="card-title">Contact Management</h2>
-                    <a href="{{ route('admin.dashboard.contacts.create') }}" class="btn btn-primary">Create Contact</a>
+                    <a href="{{ route('admin.dashboard.contacts.index') }}" class="btn btn-primary">Create Contact</a>
                 </div>
 
                 <table class="table table-bordered table-striped" id="contactsTable">

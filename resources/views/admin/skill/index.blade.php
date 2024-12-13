@@ -27,15 +27,18 @@
                     <td>{{ $row->title }}</td>
                     <td>{{ $row->description }}</td>
                     <td>
-                        <a href="{{ route('skill.show', $row->id) }}" class="btn btn-info btn-sm detail-btn">Detail</a>
-                        <a href="{{ route('skill.edit', $row->id) }}" class="btn btn-warning btn-sm edit-btn">Edit</a>
+                        <!-- Menggunakan d-flex dan gap-2 untuk menyusun tombol aksi -->
+                        <div class="d-flex gap-2">
+                            <a href="{{ route('skill.show', $row->id) }}" class="btn btn-info btn-sm">Detail</a>
+                            <a href="{{ route('skill.edit', $row->id) }}" class="btn btn-warning btn-sm">Edit</a>
 
-                        <!-- Formulir untuk penghapusan -->
-                        <form action="{{ route('skill.destroy', $row->id) }}" method="POST" style="display:inline;" class="delete-form">
-                            @csrf
-                            @method('DELETE')
-                            <button type="button" class="btn btn-danger btn-sm delete-btn">Hapus</button>
-                        </form>
+                            <!-- Formulir untuk penghapusan dengan tombol yang terpisah -->
+                            <form action="{{ route('skill.destroy', $row->id) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="button" class="btn btn-danger btn-sm delete-btn">Hapus</button>
+                            </form>
+                        </div>
                     </td>
                 </tr>
                 @endforeach
@@ -108,7 +111,6 @@
                 });
             });
         });
-
     </script>
 
 </body>

@@ -248,8 +248,6 @@
 </section>
 <!-- /Contact Section -->
 
-<!-- /Contact Section -->
-  
     
   </main>
 

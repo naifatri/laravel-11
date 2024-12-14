@@ -9,6 +9,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\AdminProjectController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\Admin\AdminHomeController;
 use Illuminate\Support\Facades\Route;
 
                         Route::get('/', function () {
@@ -80,6 +81,20 @@ use Illuminate\Support\Facades\Route;
                         
 
 Route::resource('/admin/dashboard/about', AboutController::class);
+
+
+
+
+
+
+// Group untuk admin dengan prefix "admin/dashboard"
+Route::prefix('admin/dashboard')->name('admin.')->group(function () {
+    // Resource route untuk AdminHomeController
+    Route::resource('home', AdminHomeController::class);
+});
+
+
+
 
 
         
